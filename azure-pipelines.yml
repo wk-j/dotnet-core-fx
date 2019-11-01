@@ -1,0 +1,9 @@
+pool:
+  vmImage: 'Ubuntu 16.04'
+
+steps:
+
+- script: |
+    dotnet build src/MyApp/MyApp.csproj
+
+  displayName: "Build"
