@@ -4,6 +4,19 @@
 
 
 ```bash
-dotnet clean src/MyApp/MyApp.csproj
-dotnet build src/MyApp/MyApp.csproj
+dotnet new classlib \
+    --language C# \
+    --output src/MyLibrary \
+    --framework net45
+
+dotnet new classlib \
+    --language C# \
+    --output src/MyLibrary \
+    --target-framework-override  net45
+
+dotnet add src/MyLibrary/MyLibrary.csproj \
+    package Microsoft.NETFramework.ReferenceAssemblies \
+    --version 1.0.0-preview.2
+
+dotnet build src/MyLibrary/MyLibrary.csproj
 ```

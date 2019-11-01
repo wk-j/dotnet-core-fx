@@ -5,5 +5,6 @@ steps:
 
 - script: |
     dotnet build src/MyApp/MyApp.csproj
+    dotnet build src/MyLibrary/MyLibrary.csproj
 
   displayName: "Build"
